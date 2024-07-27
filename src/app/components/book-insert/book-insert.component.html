@@ -1,0 +1,34 @@
+<div> 
+    <div class="form">
+        <h4>{{title}}</h4>
+        <div *ngIf="!inserted">
+            <div class="form-group">
+                <label for="name">Título</label>
+                <input class="form-control" id="title" required [(ngModel)]="record.title" name="title" />
+            </div>
+            <div class="form-group">
+                <label for="name">Editora</label>
+                <input class="form-control" id="publishingCompany" required [(ngModel)]="record.publishingCompany" name="publishingCompany" />
+            </div>
+            <div class="form-group">
+                <label for="name">Edição</label>
+                <input class="form-control" id="edition" required [(ngModel)]="record.edition" name="edition" />
+            </div>
+            <div class="form-group">
+                <label for="name">Ano de publicação</label>
+                <input class="form-control" id="releaseYear" required [(ngModel)]="record.releaseYear" name="releaseYear" />
+            </div>
+            <br />
+            <div class="text-center">
+                <button (click)="save()" class="btn btn-success">Salvar</button>
+                <div [innerHTML]="message"></div> 
+            </div>
+        </div>
+        <div *ngIf="inserted">
+            <h2>Registro salvo com sucesso</h2>
+            <div class="text-center">
+                <button class="btn btn-success" (click)="new()">Novo Registro</button>
+            </div>
+        </div>
+    </div>
+</div>

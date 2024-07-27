@@ -1,0 +1,22 @@
+<div> 
+    <div class="form">
+        <h4>{{title}}</h4>
+        <div *ngIf="!inserted">
+            <div class="form-group">
+                <label for="description">Descrição</label>
+                <input class="form-control" id="description" required [(ngModel)]="record.description" description="description" />
+            </div>
+            <br />
+            <div class="text-center">
+                <button (click)="save()" class="btn btn-success">Salvar</button>
+                <div [innerHTML]="message"></div>
+            </div>
+        </div>
+        <div *ngIf="inserted">
+            <h2>Registro salvo com sucesso</h2>
+            <div class="text-center">
+                <button class="btn btn-success" (click)="new()">Novo Registro</button>
+            </div>
+        </div>
+    </div>
+</div>

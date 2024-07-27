@@ -1,0 +1,18 @@
+<div *ngIf="record.codAs" class="form">
+    <h4>{{title}}</h4>
+    <form>
+        <div class="form-group">
+            <label for="description">Descrição</label>
+            <input type="text" class="form-control" id="description" [(ngModel)]="record.description" name="name" />
+        </div>
+    </form>
+    <br />
+    <div class="text-center">
+        <button (click)="update()" class="btn btn-success">Salvar</button>
+        <div [innerHTML]="message"></div>
+    </div> 
+</div>
+<div *ngIf="!record.codAs">
+    <br />
+    <h1>Registro inexiste!</h1>
+</div> 

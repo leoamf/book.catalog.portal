@@ -1,0 +1,28 @@
+<div class="row mt-3">
+  <div class="col">
+    <h1>{{title}}</h1>
+    <div class="table-responsive">
+      <h4><a class="nav-link " href="#" routerLink="/autor/insert" routerLinkActive="active">Cadastrar</a></h4>
+      <table class="table table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th width="150">Codigo</th>
+            <th width="150">Nome</th>
+            <th width="15"></th>
+            <th width="15"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let record of records" (click)="setActive(record)">
+            <td class="text-left">{{ record.codAu }}</td>
+            <td class="text-left">{{ record.name }}</td>
+            <td class="text-center"> <a class="nav-link" href="#" routerLink="/autor/edit/{{record.codAu}}"
+                routerLinkActive="active">Editar</a></td>
+            <td class="text-center"> <a class="nav-link" (click)="delete(record.codAu)"
+                routerLinkActive="active">Excluir</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+body {
+    padding-top: 5rem; 
+  }
+  
+  a:hover {
+    color: red !important;
+    cursor: pointer;  
+  }
+
+  .form {
+    max-width: 400px;
+    margin: auto;
+  }
