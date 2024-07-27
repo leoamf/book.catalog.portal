@@ -16,6 +16,9 @@ import { SubjectEditComponent } from './components/subject-edit/subject-edit.com
 import { SubjectInsertComponent } from './components/subject-insert/subject-insert.component';
 import { BookEditComponent } from './components/book-edit/book-edit.component';
 import { BookInsertComponent } from './components/book-insert/book-insert.component';
+import { AuthorSelectionListComponent } from './components/author-selection-list/author-selection-list.component';
+import { SubjectSelectionListComponent } from './components/subject-selection-list/subject-selection-list.component';
+import { BookPriceEditListComponent } from './components/book-price-edit-list/book-price-edit-list.component';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { BookInsertComponent } from './components/book-insert/book-insert.compon
     SubjectEditComponent,
     SubjectInsertComponent,
     BookEditComponent,
-    BookInsertComponent
+    BookInsertComponent,
+    AuthorSelectionListComponent,
+    SubjectSelectionListComponent,
+    BookPriceEditListComponent
   ],
   imports: [
     BrowserModule,

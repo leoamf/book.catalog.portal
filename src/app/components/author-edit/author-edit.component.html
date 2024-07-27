@@ -3,13 +3,13 @@
     <form>
         <div class="form-group">
             <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name" [(ngModel)]="record.name" name="name" />
+            <input type="text" maxlength="40" required class="form-control" id="name" [(ngModel)]="record.name" name="name" />
         </div>
     </form>
     <br />
     <div class="text-center">
-        <button (click)="update()" class="btn btn-success">Salvar</button>
         <div [innerHTML]="message"></div>
+        <button (click)="update()" class="btn btn-success">Salvar</button>
     </div> 
 </div>
 <div *ngIf="!record.codAu">

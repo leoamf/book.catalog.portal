@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Book } from 'src/app/models/book.model';
+import { Component } from '@angular/core'; 
+import { Book } from 'src/app/models/book.model'; 
 import { BookService } from 'src/app/services/book.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { BookService } from 'src/app/services/book.service';
 })
 export class BookInsertComponent {
   title = 'Inserir Livro';
+  resumeTable: any = true; 
   record: Book = {
     title: '',
     publishingCompany: '',
@@ -25,15 +26,34 @@ export class BookInsertComponent {
   ngOnInit(): void {
   }
 
+
+  addNewItem(newItem: any) { 
+    this.record.priceByChannels = newItem;
+  }
+
+  addItemAuthor(newItem: any) {
+    if (newItem.checked)
+      this.record.authors?.push(newItem.author);
+    else
+      this.record.authors = this.record.authors?.filter(item => item.codAu !== newItem.author.codAu);
+  }
+
+  addItemSubject(newItem: any) {
+    if (newItem.checked)
+      this.record.subjects?.push(newItem.subject);
+    else
+      this.record.subjects = this.record.subjects?.filter(item => item.codAs !== newItem.subject.codAs);
+  }
+
   save(): void {
     const data = {
       title: this.record.title,
       publishingCompany: this.record.publishingCompany,
       edition: this.record.edition,
       releaseYear: this.record.releaseYear,
-      authors: [],
-      subjects: [],
-      priceByChannels: []
+      authors: this.record.authors,
+      subjects: this.record.subjects,
+      priceByChannels: this.record.priceByChannels
     };
 
     this.service.create(data)

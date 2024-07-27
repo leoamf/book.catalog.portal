@@ -1,0 +1,37 @@
+<div class="row mt-3">
+    <div class="col">
+        <h4>{{title}}</h4>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th width="150">Canal</th>
+                        <th width="150">Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let record of records">
+                        <ng-template [ngIf]="isEditing">
+                            <td class="text-left">
+                                <input class="form-control" id="channel" maxlength="10" required
+                                    [(ngModel)]="record.channel" name="channel" />
+                            </td>
+                            <td class="text-left">
+                                <input class="form-control" id="price" maxlength="20"  required [(ngModel)]="record.price"
+                                    name="price"  step ="0.01" type="number" />
+                            </td>
+                        </ng-template>
+                        <ng-template [ngIf]="!isEditing">
+                            <td class="text-left">{{ record.channel}}</td>
+                            <td class="text-left">{{ record.price}}</td>
+                        </ng-template>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <button *ngIf="isEditing" (click)="save()" class="btn btn-warning ">Salvar edição</button>
+            <button *ngIf="isEditing" (click)="addLine()" class="btn btn-primary">Adicionar linha</button>
+            <button *ngIf="!isEditing" (click)="edit()" class="btn btn-primary">Editar Preço</button>
+        </div>
+    </div>
+</div>

@@ -13,13 +13,13 @@ export class BookEditComponent {
   message = '';
   @Input() viewMode = false;
   @Input() record: Book = {
-    title: '' ,
-    publishingCompany: '' ,
-    edition: 0, 
-    releaseYear: "", 
+    title: '',
+    publishingCompany: '',
+    edition: 0,
+    releaseYear: "",
     authors: [],
-    subjects: [], 
-    priceByChannels:[]
+    subjects: [],
+    priceByChannels: []
   };
 
   constructor(private service: BookService,
@@ -33,13 +33,36 @@ export class BookEditComponent {
     }
   }
 
+
+  addNewItem(newItem: any) {
+    this.record.priceByChannels = newItem;
+    this.message = '';
+  }
+
+  addItemAuthor(newItem: any) {
+    if (newItem.checked)
+      this.record.authors?.push(newItem.author);
+    else
+      this.record.authors = this.record.authors?.filter(item => item.codAu !== newItem.author.codAu);
+    this.message = '';
+  }
+
+  addItemSubject(newItem: any) {
+    if (newItem.checked)
+      this.record.subjects?.push(newItem.subject);
+    else
+      this.record.subjects = this.record.subjects?.filter(item => item.codAs !== newItem.subject.codAs);
+    this.message = '';
+  }
+
+
   get(id: string): void {
     this.service.get(id)
       .subscribe({
         next: (data) => {
           this.record = data;
         },
-        error: (e) => this.message = e.error.errors.join("<br/>") 
+        error: (e) => this.message = e.error.errors.join("<br/>")
       });
   }
 
@@ -50,7 +73,7 @@ export class BookEditComponent {
         next: (res) => {
           this.message = res.message ? res.message : 'Registro atualizado com sucesso!';
         },
-        error: (e) => this.message = e.error.errors.join("<br/>") 
+        error: (e) => this.message = e.error.errors.join("<br/>")
       });
   }
 }

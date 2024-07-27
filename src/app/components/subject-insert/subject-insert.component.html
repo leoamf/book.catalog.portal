@@ -4,12 +4,12 @@
         <div *ngIf="!inserted">
             <div class="form-group">
                 <label for="description">Descrição</label>
-                <input class="form-control" id="description" required [(ngModel)]="record.description" description="description" />
+                <input class="form-control" maxlength="20" id="description" required [(ngModel)]="record.description" description="description" />
             </div>
             <br />
             <div class="text-center">
-                <button (click)="save()" class="btn btn-success">Salvar</button>
                 <div [innerHTML]="message"></div>
+                <button (click)="save()" class="btn btn-success">Salvar</button>
             </div>
         </div>
         <div *ngIf="inserted">
