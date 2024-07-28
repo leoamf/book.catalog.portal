@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Author } from '../models/author.model';
+import { environment } from './../../environments/environment';
 
-const baseUrl = 'http://localhost:8080/api/v1/author';
+const baseUrl = environment.apiAuthor;
 
 @Injectable({
   providedIn: 'root'

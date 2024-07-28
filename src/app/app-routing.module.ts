@@ -10,6 +10,7 @@ import { SubjectEditComponent } from './components/subject-edit/subject-edit.com
 import { SubjectInsertComponent } from './components/subject-insert/subject-insert.component';
 import { BookEditComponent } from './components/book-edit/book-edit.component';
 import { BookInsertComponent } from './components/book-insert/book-insert.component';
+import { ReportComponent } from './components/report/report.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'assunto/insert', component: SubjectInsertComponent },
   { path: 'livro', component: BookListComponent },
   { path: 'livro/edit/:id', component: BookEditComponent  },
-  { path: 'livro/insert', component: BookInsertComponent }
+  { path: 'livro/insert', component: BookInsertComponent },
+  { path: 'relatorio', component: ReportComponent }
 
 ];
 

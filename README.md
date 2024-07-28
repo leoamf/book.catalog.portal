@@ -2,20 +2,17 @@
 
 Este documentação contém as diretrizes iniciais para uso da aplicação
 
-## Development server
+## Desenvolvimento server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.  
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ `ng serve` para iniciar o servidor localmente
+ Verificar as URLs da apis em src/environments/environment
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+`ng build` para buildar a aplicação
 
-## Running unit tests
+## Tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`ng test` para executar os testes unitários
 
  
