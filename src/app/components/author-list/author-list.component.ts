@@ -12,7 +12,7 @@ export class AuthorListComponent {
   title = 'Autores';
   records?: Author[];
   record: Author = {}; 
-
+  message = '';
   constructor(private service: AuthorService) { }
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class AuthorListComponent {
         next: (data) => {
           this.records = data;
         },
-        error: (e) => console.error(e)
+        error: (e) => this.message = e.error.message 
       });
   }
   delete(id: any): void {
@@ -34,7 +34,7 @@ export class AuthorListComponent {
         next: () => {
           this.retrieve();
         },
-        error: (e) => console.error(e)
+        error: (e) => this.message = e.error.message 
       });
   }
   refresh(): void {

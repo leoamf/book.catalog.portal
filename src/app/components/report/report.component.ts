@@ -7,11 +7,10 @@ import { ReportService } from 'src/app/services/report.service';
   styleUrls: ['./report.component.scss']
 })
 export class ReportComponent {
-  ngOnInit(): void {
-    this.retrieve();
+  ngOnInit(): void { 
   }
   constructor(private service: ReportService) { }
-  retrieve(): void {
+  download(): void {
     this.service.download()
       .subscribe({
         next: (data) => {

@@ -21,7 +21,7 @@ export class AuthorSelectionListComponent {
     this.retrieve();
   }
   isSelected(codAu: any) {
-    return this.recordsSelected?.findIndex(item => item.codAu !== codAu) ;
+    return this.recordsSelected?.filter(item => item.codAu == codAu).length  ;
   }
 
   retrieve(): void {

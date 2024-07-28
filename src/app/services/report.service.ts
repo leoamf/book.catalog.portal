@@ -13,7 +13,7 @@ export class ReportService {
     constructor(private http: HttpClient) { }
 
     download(): Observable<any> {
-        return this.http.post<any>(`${baseUrl}`, null, { 'responseType': 'arraybuffer' as 'json' });
+        return this.http.get<any>(`${baseUrl}`, { 'responseType': 'arraybuffer' as 'json' });
     }
 
 

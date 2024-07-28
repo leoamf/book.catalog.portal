@@ -25,7 +25,7 @@
             <app-book-price-edit-list (addNewItem)="addNewItem($event)"  [records]="record.priceByChannels" ></app-book-price-edit-list>
             <br />
             <div class="text-center">
-                <div [innerHTML]="message"></div>
+                <div class="labelError" [innerHTML]="message"></div>
                 <button (click)="save()" class="btn btn-success">Salvar</button>
             </div>
         </div>

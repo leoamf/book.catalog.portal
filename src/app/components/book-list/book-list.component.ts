@@ -12,7 +12,7 @@ export class BookListComponent {
   title = 'Livro';
   records?: Book[];
   record: Book = {}; 
-
+  message = '';
   constructor(private service: BookService) { }
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class BookListComponent {
         next: (data) => {
           this.records = data;
         },
-        error: (e) => console.error(e)
+        error: (e) => this.message = e.error.message 
       });
   }
   delete(id: any): void {
@@ -34,7 +34,7 @@ export class BookListComponent {
         next: () => {
           this.retrieve();
         },
-        error: (e) => console.error(e)
+        error: (e) => this.message = e.error.message 
       });
   }
   refresh(): void {

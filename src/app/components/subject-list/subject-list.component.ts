@@ -11,7 +11,7 @@ export class SubjectListComponent {
   records?: Subject[];
   record: Subject = {}; 
   title = 'Assuntos';
-
+  message = '';
   constructor(private service: SubjectService) { }
 
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class SubjectListComponent {
         next: (data) => {
           this.records = data;
         },
-        error: (e) => console.error(e)
+        error: (e) => this.message = e.error.message 
       });
   }
   delete(id: any): void {
@@ -33,7 +33,7 @@ export class SubjectListComponent {
         next: () => {
           this.retrieve();
         },
-        error: (e) => console.error(e)
+        error: (e) => this.message = e.error.message 
       });
   }
   refreshList(): void {

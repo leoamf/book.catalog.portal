@@ -22,7 +22,7 @@ export class SubjectSelectionListComponent {
   }
 
   isSelected(codAs: any) {
-    return this.recordsSelected?.findIndex(item => item.codAs !== codAs) ;
+    return this.recordsSelected?.filter(item => item.codAs == codAs).length;
   }
 
   retrieve(): void {
