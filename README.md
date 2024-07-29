@@ -5,6 +5,7 @@ Aplicação desenvolvida em angular 15
 
 ## Desenvolvimento server
 
+ `npm install` para instalar as dependencias localmente
  `ng serve` para iniciar o servidor localmente
  Verificar as URLs da apis em src/environments/environment
 
